@@ -1,6 +1,6 @@
 "use client";
 import { DarkModeProvider } from "@/context/DarkModeContext";
-import Header from "./Header";
+import Header from "./header/Header";
 import { NextFont } from "next/dist/compiled/@next/font";
 import styles from "@/styles/scss/Main.module.scss";
 

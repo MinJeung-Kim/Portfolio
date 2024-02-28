@@ -1,0 +1,33 @@
+@import "colors";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+}
+
+.logo {
+  color: $turquoise;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 23px;
+  letter-spacing: 1px;
+}
+
+.search {
+  width: 6.43em;
+  height: 6.43em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $coralRed;
+  svg {
+    width: 1.71em;
+    height: 1.71em;
+    color: $white;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

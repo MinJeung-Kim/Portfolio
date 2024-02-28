@@ -1,0 +1,16 @@
+@import "colors";
+
+.nav {
+  display: flex;
+  gap: 2em;
+}
+
+.menu {
+  font-size: 0.86em;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  &:hover {
+    cursor: pointer;
+  }
+}
