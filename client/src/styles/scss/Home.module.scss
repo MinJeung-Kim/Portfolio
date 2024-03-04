@@ -1,0 +1,7 @@
+@import "globals";
+
+.home {
+  @include Flexbox;
+  @include Padding(0, 3rem);
+  gap: 4rem;
+}

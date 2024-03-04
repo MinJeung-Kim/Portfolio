@@ -1,0 +1,21 @@
+@mixin Flexbox($items: center, $justify: center) {
+  display: flex;
+  align-items: $items;
+  justify-content: $justify;
+}
+
+@mixin Padding($ptb, $plr) {
+  padding: $ptb $plr;
+}
+
+@mixin FontStyles($style, $weight, $size, $height) {
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin Border($tl: 10px, $tr: 10px, $bl: 10px, $br: 10px) {
+  border: 1px solid $lightGray;
+  border-radius: $tl $tr $bl $br;
+}

@@ -1,33 +1,19 @@
 @import "colors";
-
-@mixin Flexbox($items: center, $justify: center) {
-  display: flex;
-  align-items: $items;
-  justify-content: $justify;
-}
-
-@mixin FontStyles($style, $weight, $size, $height) {
-  font-style: $style;
-  font-weight: $weight;
-  font-size: $size;
-  line-height: $height;
-}
+@import "globals";
 
 .chat {
+  @include Flexbox($justify: flex-start);
+  flex-direction: column;
   width: 100%;
-  background: #fdfdff;
-  border: 1px solid #dfe0eb;
-  border-radius: 20px;
 }
 
 .header {
   @include Flexbox($justify: space-between);
+  @include Border($tl: 10px, $tr: 10px, $bl: 0, $br: 0);
+  @include Padding(0, 3rem);
   width: 100%;
   height: 104px;
-  background: #ffffff;
-  border: 1px solid #dfe0eb;
-  border-radius: 10px 10px 0px 0px;
-  padding: 0 5rem;
+  background: var(--color-bg-dark);
 }
 
 .identity {
@@ -38,7 +24,7 @@
     @include Flexbox($items: flex-start);
     flex-direction: column;
     gap: 0.15rem;
-
+    color: var(--color-text-dar);
     p {
       &:nth-child(1) {
         @include FontStyles(normal, 700, 16px, 19px);
@@ -62,18 +48,35 @@
 }
 
 .content {
+  @include Flexbox($items: flex-start, $justify: space-between);
+  @include Border($tl: 0, $tr: 0, $bl: 10px, $br: 10px);
+  flex-direction: column;
+  border-top: 0;
+  width: 100%;
+  height: 60vh;
+}
+
+.speechBubble {
   @include Flexbox($justify: flex-start);
+  @include Padding(1rem, 3rem);
   gap: 2.2rem;
-  padding: 3rem 5rem;
-  p {
-    @include Flexbox;
-    @include FontStyles(normal, 400, 12px, 20px);
-    width: 362px;
-    height: 57px;
-    background: $purple;
-    border-radius: 0px 15px 15px 15px;
-    padding: 1rem;
-    letter-spacing: 0.14px;
-    color: #ffffff;
+  background: var(--color-bg-dark);
+  div {
+    .text {
+      @include Flexbox;
+      @include FontStyles(normal, 400, 12px, 20px);
+      width: 362px;
+      height: 57px;
+      background: $purple;
+      border-radius: 0px 15px 15px 15px;
+      padding: 1rem;
+      letter-spacing: 0.14px;
+      color: #ffffff;
+    }
+    p {
+      @include FontStyles(normal, 400, 10px, 12px);
+      padding-top: 0.58rem;
+      color: var(--color-text-dark);
+    }
   }
 }

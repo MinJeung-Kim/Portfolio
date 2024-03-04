@@ -1,14 +1,22 @@
+import Input from "./Input";
 import Identity from "../Identity";
+import { dateFormat } from "@/util/dateFormat";
 import styles from "@/styles/scss/Chat.module.scss";
 
 export default function Content() {
   return (
     <div className={styles.content}>
-      <Identity size={30} />
-      <p>
-        {`Lorem Ipsum has been the industry's standard dummy text ever since the
+      <div className={styles.speechBubble}>
+        <Identity size={30} />
+        <div>
+          <p className={styles.text}>
+            {`Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s,`}
-      </p>
+          </p>
+          <p>{dateFormat(new Date())}</p>
+        </div>
+      </div>
+      <Input />
     </div>
   );
 }

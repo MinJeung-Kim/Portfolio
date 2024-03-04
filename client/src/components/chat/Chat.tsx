@@ -4,7 +4,7 @@ import styles from "@/styles/scss/Chat.module.scss";
 
 export default function Chat() {
   return (
-    <div>
+    <div className={styles.chat}>
       <Header />
       <Content />
     </div>

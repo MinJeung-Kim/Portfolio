@@ -1,0 +1,29 @@
+@import "colors";
+@import "globals";
+
+$padding: 25px;
+
+.input {
+  @include Padding(1rem, 3rem);
+  width: 100%;
+  position: relative;
+  input {
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid #a5a6f6;
+    border-radius: 10px;
+    padding-right: 25%;
+  }
+  div {
+    @include Flexbox($justify: space-between);
+    width: 15%;
+    position: absolute;
+    right: 10%;
+    top: 25px;
+    gap: 0.5rem;
+    svg {
+      color: $purple;
+      cursor: pointer;
+    }
+  }
+}

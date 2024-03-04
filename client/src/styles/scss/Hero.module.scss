@@ -1,0 +1,49 @@
+@import "colors";
+@import "globals";
+
+.hero {
+  @include Flexbox($items: flex-start);
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.banner {
+  @include Flexbox($justify: flex-start);
+  @include Padding(0.5rem, 0.85rem);
+  background: $lightSkyBlue;
+  gap: 1.3rem;
+
+  P {
+    @include Flexbox;
+    @include FontStyles(normal, 600, 9px, 9px);
+    width: 93px;
+    height: 26px;
+    background: $white;
+    color: $turquoise;
+  }
+  div {
+    @include Flexbox($justify: space-between);
+    width: 100%;
+
+    h2 {
+      @include FontStyles(normal, 500, 12px, 18px);
+      color: $turquoise;
+    }
+
+    svg {
+      color: $turquoise;
+    }
+  }
+}
+
+.content {
+  @extend .hero;
+  h1 {
+    @include FontStyles(normal, 600, 70px, 95px);
+    letter-spacing: -2px;
+  }
+  p {
+    @include FontStyles(normal, 400, 16px, 28px);
+    letter-spacing: 0.5px;
+  }
+}
