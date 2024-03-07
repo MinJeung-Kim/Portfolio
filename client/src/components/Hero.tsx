@@ -1,4 +1,4 @@
-import ArrowFillIcon from "./icons/ArrowFillIcon";
+import ArrowFillIcon from "./ui/icons/ArrowFillIcon";
 import styles from "@/styles/scss/Hero.module.scss";
 
 export default function Hero() {

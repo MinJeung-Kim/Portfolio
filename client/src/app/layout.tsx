@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "@/styles/css/globals.css";
 import Main from "@/components/Main";
+import "@/styles/css/globals.css";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 
@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Main font={poppins}>{children}</Main>
+      <div id="portal" />
     </html>
   );
 }

@@ -1,7 +1,7 @@
 import Identity from "../Identity";
-import InfoFillIcon from "../icons/InfoFillIcon";
-import PhoneFillIcon from "../icons/PhoneFillIcon";
-import VideocamFillIcon from "../icons/VideocamFillIcon";
+import InfoFillIcon from "../ui/icons/InfoFillIcon";
+import PhoneFillIcon from "../ui/icons/PhoneFillIcon";
+import VideocamFillIcon from "../ui/icons/VideocamFillIcon";
 
 import styles from "@/styles/scss/Chat.module.scss";
 

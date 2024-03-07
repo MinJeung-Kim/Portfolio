@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import MoonIcon from "../icons/MoonIcon";
-import SunIcon from "../icons/SunIcon";
-import SearchIcon from "../icons/SearchIcon";
+import MoonIcon from "../ui/icons/MoonIcon";
+import SunIcon from "../ui/icons/SunIcon";
+import SearchIcon from "../ui/icons/SearchIcon";
 import HeaderNavigation from "./HeaderNavigation";
 import { useDarkMode } from "@/context/DarkModeContext";
 import styles from "@/styles/scss/Header.module.scss";

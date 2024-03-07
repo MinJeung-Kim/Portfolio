@@ -1,0 +1,11 @@
+$banner: (
+  red: red,
+  green: green,
+);
+
+@each $key, $color in $banner {
+  .banner_#{$key} {
+    background: $color;
+    color: #fff;
+  }
+}

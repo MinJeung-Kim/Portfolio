@@ -1,11 +1,21 @@
+import { AuthErrorEventBus } from "@/context/AuthContext";
+
+type Options = {
+  method: string;
+  body?: string;
+  headers?: HeadersInit | undefined;
+};
+
 export default class HttpClient {
   baseURL: string;
+  authErrorEventBus: AuthErrorEventBus;
 
-  constructor(baseURL: string) {
+  constructor(baseURL: string, authErrorEventBus: AuthErrorEventBus) {
     this.baseURL = baseURL;
+    this.authErrorEventBus = authErrorEventBus;
   }
 
-  async fetch(url: string, options: any) {
+  async fetch(url: string, options: Options) {
     const res = await fetch(`${this.baseURL}${url}`, {
       ...options,
       headers: {
@@ -23,7 +33,14 @@ export default class HttpClient {
     if (res.status > 299 || res.status < 200) {
       const message =
         data && data.message ? data.message : "Something went wrong! 🤪";
-      throw new Error(message);
+
+      const error = new Error(message);
+
+      if (res.status === 401) {
+        this.authErrorEventBus.notify(error);
+        return;
+      }
+      throw error;
     }
     return data;
   }

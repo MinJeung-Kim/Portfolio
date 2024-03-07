@@ -11,14 +11,23 @@ import {
 } from "react";
 import AuthService from "@/service/auth";
 
-const AuthContext = createContext({});
-
-const contextRef = createRef();
-
-type State = {
+type Props = {
   authService: AuthService;
   authErrorEventBus: AuthErrorEventBus;
   children: ReactNode;
+};
+
+type State = {
+  user: User;
+  signUp: (
+    username: string,
+    password: string,
+    name: string,
+    email: string,
+    url: string
+  ) => Promise<void>;
+  logIn: (username: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
 };
 
 type User =
@@ -27,11 +36,14 @@ type User =
       token: String;
     };
 
+const AuthContext = createContext<State>({} as State);
+const contextRef = createRef();
+
 export function AuthProvider({
   authService,
   authErrorEventBus,
   children,
-}: State) {
+}: Props) {
   const [user, setUser] = useState<User>(undefined);
 
   useImperativeHandle(contextRef, () => (user ? user.token : undefined));
