@@ -13,7 +13,7 @@ export default function Hero() {
       </div>
 
       <div className={styles.content}>
-        <h1>저에 대해 궁금한 가요?</h1>
+        <h1>저에 대해 알고 싶으신 가요?</h1>
         <p>
           저에 대해 궁금한 점을 물어봐주세요👋 <br />
           즐겁게 몰입하고 크게 성장하며, 사용자의 가치를 <br /> 중요하게

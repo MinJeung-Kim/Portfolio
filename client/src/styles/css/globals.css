@@ -3,11 +3,13 @@
 :root {
   --color-bg-dark: #fff;
   --color-text-dark: #121212;
+  --color-lightGray: #6e7374;
 }
 
 html.dark {
   --color-bg-dark: #121212;
   --color-text-dark: #fff;
+  --color-lightGray: #939aa6;
 }
 
 * {
@@ -17,10 +19,17 @@ html.dark {
 }
 
 body {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
 }
 
 a {
   color: var(--color-text-dark);
+}
+
+main {
+  max-width: 1280px;
 }

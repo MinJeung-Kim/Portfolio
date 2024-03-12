@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Main from "@/components/Main";
+import Header from "@/components/header/Header";
+import { DarkModeProvider } from "@/context/DarkModeContext";
 import "@/styles/css/globals.css";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
@@ -18,13 +19,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <Main font={poppins}>{children}</Main>
-      <div id="portal" />
+    <html lang="en" className={poppins.className}>
+      <body>
+        <DarkModeProvider>
+          <Header />
+          <main>{children}</main>
+        </DarkModeProvider>
+        <div id="portal" />
+      </body>
     </html>
   );
 }

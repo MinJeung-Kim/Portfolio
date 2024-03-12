@@ -1,5 +1,7 @@
 @import "colors";
+@import "globals";
 
 .main {
-  background-color: $white;
+  @include Flexbox;
+  gap: 4rem;
 }

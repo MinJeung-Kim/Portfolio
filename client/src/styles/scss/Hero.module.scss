@@ -5,6 +5,7 @@
   @include Flexbox($items: flex-start);
   flex-direction: column;
   gap: 2rem;
+  flex: 1;
 }
 
 .banner {
@@ -12,6 +13,7 @@
   @include Padding(0.5rem, 0.85rem);
   background: $lightSkyBlue;
   gap: 1.3rem;
+  width: 100%;
 
   > p {
     @include Flexbox;

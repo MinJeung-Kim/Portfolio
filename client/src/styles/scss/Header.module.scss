@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2em;
+  padding-bottom: 2rem;
 }
 
 .logo {
@@ -17,15 +18,15 @@
 }
 
 .search {
-  width: 6.43em;
-  height: 6.43em;
+  width: 3em;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: $coralRed;
   > svg {
-    width: 1.71em;
-    height: 1.71em;
+    width: 1em;
+    height: 1em;
     color: $white;
   }
   &:hover {

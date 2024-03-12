@@ -5,6 +5,7 @@
   @include Flexbox($justify: flex-start);
   flex-direction: column;
   width: 100%;
+  flex: 2;
 }
 
 .header {
@@ -53,7 +54,7 @@
   flex-direction: column;
   border-top: 0;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
 }
 
 .speechBubble {

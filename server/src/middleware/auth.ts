@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
-import * as userRepository from "../data/auth.js";
-import { config } from "../config.js";
+import * as userRepository from "../data/auth";
+import { config } from "../config";
 
 const AUTH_ERROR = { message: "Authentication Error" };
 

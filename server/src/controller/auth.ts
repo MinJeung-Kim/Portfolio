@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import * as userRepository from "../data/auth.js";
-import { config } from "../config.js";
+import * as userRepository from "../data/auth";
+import { config } from "../config";
 
 export async function signup(req: Request, res: Response) {
   const { username, password, name, email, url } = req.body;

@@ -2,8 +2,9 @@ import express, { Response } from "express";
 import cors from "cors";
 import moran from "morgan";
 import helmet from "helmet";
-import authRouter from "./router/auth.js";
-import { config } from "./config.js";
+import authRouter from "./router/auth";
+import { config } from "./config";
+import { Server } from "socket.io";
 
 const app = express();
 
@@ -23,6 +24,14 @@ app.use((error: any, res: Response) => {
   res.sendStatus(500);
 });
 
-app.listen(config.host.port, () => {
-  console.log("Started!");
+const server = app.listen(config.host.port);
+const socketIO = new Server(server, {
+  cors: {
+    origin: "*",
+  },
+});
+
+socketIO.on("connection", (socket) => {
+  console.log("Client is here!");
+  socketIO.emit("Roxie", "Hello👋");
 });
