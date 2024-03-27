@@ -11,7 +11,7 @@
 .banner {
   @include Flexbox($justify: flex-start);
   @include Padding(0.5rem, 0.85rem);
-  background: $lightSkyBlue;
+  background: var(--color-lightSkyBlue);
   gap: 1.3rem;
   width: 100%;
 

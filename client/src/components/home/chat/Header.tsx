@@ -1,9 +1,9 @@
-import Identity from "../Identity";
-import InfoFillIcon from "../ui/icons/InfoFillIcon";
-import PhoneFillIcon from "../ui/icons/PhoneFillIcon";
-import VideocamFillIcon from "../ui/icons/VideocamFillIcon";
+import Identity from "../../Identity";
+import InfoFillIcon from "../../ui/icons/InfoFillIcon";
+import PhoneFillIcon from "../../ui/icons/PhoneFillIcon";
+import VideocamFillIcon from "../../ui/icons/VideocamFillIcon";
 
-import styles from "@/styles/scss/Chat.module.scss";
+import styles from "./Chat.module.scss";
 
 export default function Header() {
   return (

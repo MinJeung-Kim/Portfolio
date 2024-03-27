@@ -1,6 +1,6 @@
 import { Careers } from "@/model/career";
-import ArrowFillIcon from "../ui/icons/ArrowFillIcon";
-import styles from "@/styles/scss/Career.module.scss";
+import LineArrowFillIcon from "../../ui/icons/LineArrowFillIcon";
+import styles from "./Career.module.scss";
 
 type Props = { career: Careers };
 
@@ -11,7 +11,7 @@ export default function CareerCard({
     <ul className={styles.career_card}>
       <li className={styles.service}>
         <div>{service}</div>
-        <ArrowFillIcon />
+        <LineArrowFillIcon />
       </li>
       <li className={styles.company}>{company}</li>
     </ul>

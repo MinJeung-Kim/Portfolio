@@ -1,4 +1,4 @@
-import ArrowFillIcon from "./ui/icons/ArrowFillIcon";
+import LineArrowFillIcon from "./ui/icons/LineArrowFillIcon";
 import styles from "@/styles/scss/Hero.module.scss";
 
 export default function Hero() {
@@ -8,10 +8,9 @@ export default function Hero() {
         <p>MORE INFO</p>
         <div>
           <h2>록시에 대해 더 알아보기</h2>
-          <ArrowFillIcon />
+          <LineArrowFillIcon />
         </div>
       </div>
-
       <div className={styles.content}>
         <h1>저에 대해 알고 싶으신 가요?</h1>
         <p>

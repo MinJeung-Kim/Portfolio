@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .carouselWrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 20%;
+    overflow: hidden;
+
+    &:hover {
+      .swipeLeft,
+      .swipeRight {
+        position: absolute;
+        top: 45%;
+        z-index: 1;
+        display: block;
+        padding: 0.5rem;
+        background-color: rgb(234 238 239 / 38%);
+        border-radius: 50%;
+        svg {
+          color: rgb(63, 63, 63);
+        }
+      }
+    }
+
+    .swipeLeft,
+    .swipeRight {
+      display: none;
+    }
+
+    .swipeLeft {
+      left: 0.5rem;
+    }
+
+    .swipeRight {
+      right: 0.5rem;
+      transform: rotate(3.142rad);
+    }
+
+    .carousel {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      li {
+        flex: none;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .carouselItem {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 33.33%;
+    height: 350px;
+    padding: 10px 0 15px;
+    overflow: hidden;
+    transition: border 300ms;
+
+    img {
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  //   :root[color-theme="dark"] & {
+  //     .carouselItem {
+  //       border-right: 2px solid gray;
+  //       border-left: 2px solid gray;
+  //     }
+  //   }
+}

@@ -1,7 +1,11 @@
 @import "colors";
 @import "globals";
+@import "responsive";
 
 .main {
   @include Flexbox;
   gap: 4rem;
+  @include r(1024) {
+    flex-direction: column;
+  }
 }

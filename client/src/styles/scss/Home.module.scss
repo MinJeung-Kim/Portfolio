@@ -1,8 +1,12 @@
 @import "globals";
+@import "responsive";
 
 .home {
   @include Flexbox($items: flex-start);
   @include Padding(0, 3rem);
   flex-direction: column;
   gap: 2rem;
+  @include r(1024) {
+    align-items: center;
+  }
 }

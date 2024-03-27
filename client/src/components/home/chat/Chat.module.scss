@@ -1,11 +1,15 @@
-@import "colors";
-@import "globals";
+@import "@/styles/scss/colors";
+@import "@/styles/scss/globals";
+@import "@/styles/scss/responsive";
 
 .chat {
   @include Flexbox($justify: flex-start);
   flex-direction: column;
   width: 100%;
   flex: 2;
+  @include r(1024) {
+    order: 2;
+  }
 }
 
 .header {
@@ -78,6 +82,33 @@
       @include FontStyles(normal, 400, 10px, 12px);
       padding-top: 0.58rem;
       color: var(--color-text-dark);
+    }
+  }
+}
+
+$padding: 25px;
+
+.input {
+  @include Padding(1rem, 3rem);
+  width: 100%;
+  position: relative;
+  > input {
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid #a5a6f6;
+    border-radius: 10px;
+    padding-right: 25%;
+  }
+  > div {
+    @include Flexbox($justify: space-between);
+    width: 15%;
+    position: absolute;
+    right: 10%;
+    top: 25px;
+    gap: 0.5rem;
+    > svg {
+      color: $purple;
+      cursor: pointer;
     }
   }
 }

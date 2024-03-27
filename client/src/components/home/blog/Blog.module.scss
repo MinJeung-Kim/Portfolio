@@ -1,5 +1,5 @@
-@import "colors";
-@import "globals";
+@import "@/styles/scss/colors";
+@import "@/styles/scss/globals";
 
 .blog {
   width: 100%;
@@ -56,5 +56,7 @@
   }
   .description {
     @include FontStyles(normal, 400, 16px, 30px);
+    word-break: break-word;
+    text-align: justify;
   }
 }

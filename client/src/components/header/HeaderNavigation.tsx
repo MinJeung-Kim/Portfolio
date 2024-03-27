@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@/styles/scss/HeaderNavigation.module.scss";
+import styles from "./Header.module.scss";
 
 export default function HeaderNavigation() {
   const MENUS = [

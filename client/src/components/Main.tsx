@@ -1,5 +1,5 @@
 import Hero from "./Hero";
-import Chat from "./chat/Chat";
+import Chat from "./home/chat/Chat";
 import styles from "@/styles/scss/Main.module.scss";
 
 export default function Main() {

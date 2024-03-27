@@ -1,0 +1,72 @@
+@import "@/styles/scss/colors";
+@import "@/styles/scss/globals";
+@import "@/styles/scss/responsive";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  padding-bottom: 2rem;
+  @include r(1024) {
+    padding-top: 2rem;
+  }
+}
+
+.logo {
+  color: $turquoise;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 23px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.menu_icon {
+  display: none;
+
+  @include r(1024) {
+    display: flex;
+  }
+}
+
+.menu {
+  @include Flexbox($justify: space-between);
+  width: 70%;
+
+  @include r(1024) {
+    display: none;
+  }
+}
+
+.search {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $coralRed;
+  > svg {
+    width: 1em;
+    height: 1em;
+    color: $white;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2em;
+}
+
+.menu {
+  font-size: 0.86em;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  &:hover {
+    cursor: pointer;
+  }
+}

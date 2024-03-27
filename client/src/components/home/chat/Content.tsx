@@ -1,7 +1,7 @@
 import Input from "./Input";
-import Identity from "../Identity";
+import Identity from "../../Identity";
 import { dateFormat } from "@/util/dateFormat";
-import styles from "@/styles/scss/Chat.module.scss";
+import styles from "./Chat.module.scss";
 
 export default function Content() {
   return (

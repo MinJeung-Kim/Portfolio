@@ -4,12 +4,14 @@
   --color-bg-dark: #fff;
   --color-text-dark: #121212;
   --color-lightGray: #6e7374;
+  --color-lightSkyBlue: #e5f0f2;
 }
 
 html.dark {
   --color-bg-dark: #121212;
   --color-text-dark: #fff;
   --color-lightGray: #939aa6;
+  --color-lightSkyBlue: rgba(229, 240, 242, 0.35);
 }
 
 * {
@@ -32,4 +34,5 @@ a {
 
 main {
   max-width: 1280px;
+  margin: 0 auto;
 }

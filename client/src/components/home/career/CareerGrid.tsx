@@ -2,7 +2,9 @@
 import { useState } from "react";
 import CareerCard from "./CareerCard";
 import CareerDetail from "./CareerDetail";
-import styles from "@/styles/scss/Career.module.scss";
+import YouTubeIFrameApi from "../../ui/YouTubeIFrameApi";
+import styles from "./Career.module.scss";
+import Scroll from "../../ui/Scroll";
 
 const CAREERS = [
   {
@@ -27,7 +29,7 @@ const CAREERS = [
       businessPeriod: "2022.07 ~ 2023.11",
       development: "6명 (frontend: 1 , backend: 1, engine: 4)",
       detail: [
-        "* D-CLOv2, D-CLOv3 초기 화면 기획 단계부터 UI/UX, 디자인 및 화면 구현 담당",
+        "* D-CLO v2, D-CLO v3 초기 화면 기획 단계부터 UI/UX, 디자인 및 화면 구현 담당",
         "* 자사(린아레나) 홈페이지 화면 기획 및 설계, 디자인, UI/UX",
         "* 스크롤 애니메이션 및 반응형 적용",
         "* RESTful API 인터페이스를 사용한 문의하기 기능 구현",
@@ -38,7 +40,8 @@ const CAREERS = [
     id: "2",
     service: "OTT 계정 공유 플랫폼 WIZZNEY",
     company: "(주) 유니윌 위즈페이",
-    image: "",
+    image:
+      "https://img.freepik.com/free-photo/man-watching-streaming-service-his-laptop_23-2149047430.jpg?w=1380&t=st=1710342346~exp=1710342946~hmac=c9a8be93e1784b3e78e6739dee711c5362f8681e8f2320e3fb1b6bb6d93ff7c2",
     content: {
       mainBusiness: "프론트엔드",
       role: [
@@ -62,9 +65,10 @@ const CAREERS = [
   },
   {
     id: "3",
-    service: "양돈생산 경영관리 프로그램 피그플랜",
+    service: "양돈생산 경영관리 프로그램 PIGPLAN",
     company: "(주) 이지팜",
-    image: "",
+    image:
+      "https://img.freepik.com/free-photo/selective-closeup-shot-pink-pigs-barn_181624-4482.jpg?t=st=1710342404~exp=1710346004~hmac=bd132b69e36d4d1ff929c4679ddd750fa166fd923a5e0f7fe5fb00dbbb1152a0&w=1380",
     content: {
       mainBusiness: "프론트엔드, 백엔드, 유지보수, 고객응대",
       role: [
@@ -93,7 +97,8 @@ const CAREERS = [
     id: "4",
     service: "이젠에듀원격평생교육원",
     company: "(주) 이젠에듀커뮤니케이션즈",
-    image: "",
+    image:
+      "https://img.freepik.com/free-vector/flat-international-day-education-illustration_23-2149911213.jpg?t=st=1710342441~exp=1710346041~hmac=d4f3b132c2ecab841723f54abe1ba417b93568fda6d3a75cee4bb36a3a75ee75&w=900",
     content: {
       mainBusiness: "멀티미디어 디자인",
       role: [
@@ -109,18 +114,35 @@ const CAREERS = [
 
 export default function CareerGrid() {
   const [selected, setSelected] = useState(CAREERS[0]);
+
   return (
     <article className={styles.career}>
-      <h1 className={styles.title}>Career</h1>
       <div className={styles.detail_card}>
-        <ul className={styles.post_list}>
-          {CAREERS.map((career) => (
-            <li className={styles.card} key={career.id}>
-              <CareerCard career={career} />
-            </li>
-          ))}
-        </ul>
-        <CareerDetail career={selected} />
+        <div className={styles.career_detail}>
+          <div className={styles.post_list}>
+            <h1 className={styles.title}>Career</h1>
+            <Scroll>
+              {CAREERS.map((career) => (
+                <div
+                  className={`${styles.card} ${
+                    selected.id === career.id && styles.selected
+                  }`}
+                  key={career.id}
+                  onClick={() => {
+                    setSelected(career);
+                  }}
+                >
+                  <CareerCard career={career} />
+                </div>
+              ))}
+            </Scroll>
+          </div>
+          <CareerDetail career={selected} />
+        </div>
+
+        <article className={styles.youtube}>
+          <YouTubeIFrameApi />
+        </article>
       </div>
     </article>
   );

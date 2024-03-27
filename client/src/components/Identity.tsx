@@ -3,10 +3,10 @@ import identityImage from "@/assets/images/identity.png";
 import styles from "@/styles/scss/Identity.module.scss";
 
 type Props = {
-  size: number;
+  size?: number;
 };
 
-export default function Identity({ size }: Props) {
+export default function Identity({ size = 40 }: Props) {
   return (
     <Image
       className={styles.image}

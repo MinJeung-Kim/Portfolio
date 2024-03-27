@@ -1,0 +1,206 @@
+// Define colors, mixins, and global styles if not already defined
+@import "@/styles/scss/colors";
+@import "@/styles/scss/globals";
+@import "@/styles/scss/responsive";
+
+// Variables for common values
+$default-font-size: 14px;
+$default-line-height: 26px;
+$heading-font-size: 20px;
+$heading-line-height: 38px;
+$small-font-size: 12px;
+$small-line-height: 12px;
+$default-gap: 1rem;
+$small-gap: 0.5rem;
+
+// Mixin for flex container
+@mixin flex-container(
+  $direction: column,
+  $items: flex-start,
+  $justify: flex-start,
+  $gap: $default-gap
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $items;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+// Mixin for text styles
+@mixin text-styles(
+  $size: $default-font-size,
+  $line-height: $default-line-height,
+  $weight: 400
+) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+// Career section styling
+.career {
+  width: 100%;
+  height: 90vh;
+
+  .detail_card {
+    @include flex-container(row, flex-start, flex-start, 2rem);
+    width: 100%;
+    height: 100%;
+
+    @include r(1024) {
+      flex-direction: column;
+    }
+
+    .career_detail {
+      @include flex-container(row, flex-start, flex-start, 2rem);
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      @include r(1024) {
+        order: 2;
+      }
+    }
+
+    .title {
+      @include Title;
+    }
+  }
+
+  .post_list {
+    height: 100%;
+  }
+
+  .card:not(:last-of-type) {
+    border-bottom: 1px solid $lightGray;
+  }
+
+  .selected {
+    color: $brightCyan;
+  }
+}
+
+// Detail section styling
+.detail {
+  height: 100%;
+  flex: 1;
+  @include flex-container($justify: space-between, $gap: 0);
+
+  > img {
+    padding-bottom: 1rem;
+    object-fit: cover;
+    height: auto;
+    @include r(1024) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .title_wrap {
+    @include flex-container($gap: 0);
+
+    > p {
+      @include text-styles($small-font-size, $small-line-height, 500);
+      padding-bottom: 0.5rem;
+    }
+
+    > h1 {
+      @include text-styles($heading-font-size, 30px, 500);
+    }
+  }
+
+  .content {
+    @include flex-container;
+    height: 30%;
+
+    .array,
+    .colum {
+      @include flex-container($gap: 0);
+      word-break: keep-all;
+      padding-bottom: 0.8rem;
+
+      .header {
+        display: block;
+        white-space: nowrap;
+      }
+
+      > li {
+        @include text-styles;
+        padding-left: 0.5rem;
+      }
+
+      .item {
+        padding-left: 1rem;
+      }
+    }
+
+    .colum {
+      @include flex-container(row, $gap: 0);
+    }
+  }
+}
+
+// Career card styling
+.career_card {
+  width: 100%;
+  @include flex-container($gap: 0.5rem);
+  @include Padding(2rem, 0);
+  :hover {
+    cursor: pointer;
+    color: $brightCyan;
+  }
+
+  .service {
+    width: 100%;
+    @include flex-container(row, $justify: space-between);
+    @include text-styles($heading-font-size, $heading-line-height);
+
+    > div {
+      word-break: keep-all;
+    }
+
+    > svg {
+      width: 2rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .company {
+    @include text-styles($small-font-size, $small-line-height);
+    letter-spacing: 0.5px;
+    color: var(--color-lightGray);
+  }
+}
+
+.footer {
+  @include flex-container(
+    row,
+    $items: center,
+    $justify: space-between,
+    $gap: 0
+  );
+  width: 100%;
+  border-top: 1px solid #dfdfdf;
+
+  .writer {
+    @include flex-container(row, $items: center);
+  }
+
+  .name {
+    @include text-styles($small-font-size, $small-line-height);
+  }
+
+  .date {
+    @include text-styles($small-font-size, $small-line-height);
+    @include Padding(1.5rem, 0);
+    color: var(--color-lightGray);
+  }
+}
+
+.youtube {
+  height: 100%;
+  flex: 2;
+  @include r(1024) {
+    width: 100%;
+  }
+}

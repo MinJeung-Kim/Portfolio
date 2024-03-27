@@ -1,7 +1,7 @@
 import { Post } from "@/model/blog";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/styles/scss/Blog.module.scss";
+import styles from "./Blog.module.scss";
 
 type Props = { post: Post };
 

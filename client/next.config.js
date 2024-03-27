@@ -6,19 +6,16 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  experimental: {
-    appDir: true,
-  },
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.example.com",
+        hostname: "img.freepik.com",
         port: "",
         pathname: "/**",
       },
     ],
-    domains: ["assets.example.com", "img.freepik.com"],
+    domains: ["img.freepik.com"],
   },
 };
 
