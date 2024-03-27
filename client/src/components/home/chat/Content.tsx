@@ -13,7 +13,7 @@ export default function Content() {
             {`Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s,`}
           </p>
-          <p>{dateFormat(new Date())}</p>
+          <p className={styles.time}>{dateFormat(new Date())}</p>
         </div>
       </div>
       <Input />

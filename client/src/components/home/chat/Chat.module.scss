@@ -16,7 +16,7 @@
 .header {
   @include Flexbox($justify: space-between);
   @include Border($tl: 10px, $tr: 10px, $bl: 0, $br: 0);
-  @include Padding(0, 3rem);
+  @include Padding(0, 2rem);
   width: 100%;
   height: 104px;
   background: var(--color-bg-dark);
@@ -61,33 +61,37 @@
   width: 100%;
   height: 70vh;
 
+  @include mobile {
+    height: 55vh;
+  }
+
   .speechBubble {
     @include Flexbox($justify: flex-start);
-    @include Padding(1rem, 3rem);
-    gap: 2.2rem;
+    @include Padding(1rem, 2rem);
+    gap: 1rem;
     background: var(--color-bg-dark);
-    > div {
-      .text {
-        @include Flexbox;
-        @include FontStyles(normal, 400, 12px, 20px);
-        width: 100%;
-        height: 57px;
-        background: $purple;
-        border-radius: 0px 15px 15px 15px;
-        padding: 1rem;
-        letter-spacing: 0.14px;
-        color: #ffffff;
 
-        @include mobile {
-          overflow: auto;
-          padding: 1rem 0.3rem;
-        }
+    .text {
+      @include Flexbox;
+      @include FontStyles(normal, 400, 12px, 20px);
+      width: 100%;
+      height: 57px;
+      background: $purple;
+      border-radius: 0px 15px 15px 15px;
+      padding: 0.5rem;
+      letter-spacing: 0.14px;
+      color: #ffffff;
+
+      @include mobile {
+        overflow: auto;
+        display: inline-block;
       }
-      > p {
-        @include FontStyles(normal, 400, 10px, 12px);
-        padding-top: 0.58rem;
-        color: var(--color-text-dark);
-      }
+    }
+
+    .time {
+      @include FontStyles(normal, 400, 10px, 12px);
+      padding-top: 0.58rem;
+      color: var(--color-text-dark);
     }
   }
 }

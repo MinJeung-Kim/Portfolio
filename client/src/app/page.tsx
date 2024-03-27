@@ -8,9 +8,9 @@ export default function HomePage() {
   return (
     <section className={styles.home}>
       <Main />
-      {/* <BlogGrid />
+      <BlogGrid />
       <CareerGrid />
-      <Visitor /> */}
+      {/*   <Visitor /> */}
     </section>
   );
 }
