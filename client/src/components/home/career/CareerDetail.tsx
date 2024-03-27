@@ -20,7 +20,7 @@ const COLUMNS = [
 ];
 
 export default function CareerDetail({
-  career: { id, service, company, image, content },
+  career: { service, company, image, content },
 }: Props) {
   return (
     <article className={styles.detail}>

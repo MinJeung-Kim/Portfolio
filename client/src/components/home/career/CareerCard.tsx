@@ -4,13 +4,11 @@ import styles from "./Career.module.scss";
 
 type Props = { career: Careers };
 
-export default function CareerCard({
-  career: { id, service, company },
-}: Props) {
+export default function CareerCard({ career: { service, company } }: Props) {
   return (
     <ul className={styles.career_card}>
       <li className={styles.service}>
-        <div>{service}</div>
+        <p>{service}</p>
         <LineArrowFillIcon />
       </li>
       <li className={styles.company}>{company}</li>

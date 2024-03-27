@@ -38,7 +38,7 @@ $small-gap: 0.5rem;
   font-weight: $weight;
 }
 
-// Career section styling
+// Career
 .career {
   width: 100%;
   height: 90vh;
@@ -48,99 +48,55 @@ $small-gap: 0.5rem;
     width: 100%;
     height: 100%;
 
-    // @include r(1024) {
-    //   flex-direction: column;
-    // }
+    @include mobile {
+      flex-direction: column;
+    }
 
     .career_detail {
       @include flex-container(row, flex-start, flex-start, 2rem);
       width: 100%;
       height: 100%;
       flex: 1;
-      // @include r(1024) {
-      //   order: 2;
-      // }
-    }
 
-    .title {
-      @include Title;
-    }
-  }
-
-  .post_list {
-    height: 100%;
-  }
-
-  .card:not(:last-of-type) {
-    border-bottom: 1px solid $lightGray;
-  }
-
-  .selected {
-    color: $brightCyan;
-  }
-}
-
-// Detail section styling
-.detail {
-  height: 100%;
-  flex: 1;
-  @include flex-container($justify: space-between, $gap: 0);
-
-  > img {
-    padding-bottom: 1rem;
-    object-fit: cover;
-    height: auto;
-    // @include r(1024) {
-    //   width: 100%;
-    //   height: auto;
-    // }
-  }
-
-  .title_wrap {
-    @include flex-container($gap: 0);
-
-    > p {
-      @include text-styles($small-font-size, $small-line-height, 500);
-      padding-bottom: 0.5rem;
-    }
-
-    > h1 {
-      @include text-styles($heading-font-size, 30px, 500);
-    }
-  }
-
-  .content {
-    @include flex-container;
-    height: 30%;
-
-    .array,
-    .colum {
-      @include flex-container($gap: 0);
-      word-break: keep-all;
-      padding-bottom: 0.8rem;
-
-      .header {
-        display: block;
-        white-space: nowrap;
-      }
-
-      > li {
-        @include text-styles;
-        padding-left: 0.5rem;
-      }
-
-      .item {
-        padding-left: 1rem;
+      @include mobile {
+        flex-direction: column;
+        order: 2;
       }
     }
 
-    .colum {
-      @include flex-container(row, $gap: 0);
+    .post_list {
+      width: 100%;
+      height: 100%;
+
+      .title {
+        @include Title;
+      }
+      > div {
+        > div {
+          @include mobile {
+            display: flex;
+            gap: 1rem;
+            overflow: auto;
+          }
+
+          .card:not(:last-of-type) {
+            border-bottom: 1px solid $lightGray;
+
+            @include mobile {
+              border-bottom: 0;
+            }
+          }
+
+          .selected {
+            color: $brightCyan;
+          }
+        }
+      }
     }
   }
 }
 
-// Career card styling
+// CareerCard
 .career_card {
   width: 100%;
   @include flex-container($gap: 0.5rem);
@@ -150,18 +106,34 @@ $small-gap: 0.5rem;
     color: $brightCyan;
   }
 
+  @include mobile {
+    @include Padding(1rem, 0);
+    padding-bottom: 0;
+  }
+
   .service {
     width: 100%;
     @include flex-container(row, $justify: space-between);
     @include text-styles($heading-font-size, $heading-line-height);
 
-    > div {
-      word-break: keep-all;
+    > p {
+      // word-break: keep-all;
+      @include mobile {
+        font-size: 0.85rem;
+        line-height: 21px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: calc(10em / 2 + 5px);
+      }
     }
 
     > svg {
       width: 2rem;
       margin-top: 0.5rem;
+      @include mobile {
+        display: none;
+      }
     }
   }
 
@@ -169,6 +141,87 @@ $small-gap: 0.5rem;
     @include text-styles($small-font-size, $small-line-height);
     letter-spacing: 0.5px;
     color: var(--color-lightGray);
+    @include mobile {
+      font-size: 0.58rem;
+      line-height: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: calc(10em / 2 + 5px);
+    }
+  }
+}
+
+// Detail section styling
+.detail {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  @include flex-container($justify: space-between, $gap: 0);
+
+  > img {
+    padding-bottom: 1rem;
+    object-fit: cover;
+    height: auto;
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .title_wrap {
+    @include flex-container($gap: 0);
+
+    > p {
+      @include text-styles($small-font-size, $small-line-height, 500);
+      padding-bottom: 0.5rem;
+      @include mobile {
+        font-size: 0.58rem;
+      }
+    }
+
+    > h1 {
+      @include text-styles($heading-font-size, 30px, 500);
+      @include mobile {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.content {
+  @include flex-container;
+  height: 30%;
+
+  .array,
+  .colum {
+    @include flex-container($gap: 0);
+    word-break: keep-all;
+    padding-bottom: 0.8rem;
+
+    .header {
+      display: block;
+      white-space: nowrap;
+      @include mobile {
+        font-size: 0.8rem;
+      }
+    }
+
+    > li {
+      @include text-styles;
+      padding-left: 0.5rem;
+    }
+
+    .item {
+      padding-left: 1rem;
+      @include mobile {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .colum {
+    @include flex-container(row, $gap: 0);
   }
 }
 
@@ -181,6 +234,7 @@ $small-gap: 0.5rem;
   );
   width: 100%;
   border-top: 1px solid #dfdfdf;
+  padding: 0 0.5rem;
 
   .writer {
     @include flex-container(row, $items: center);
@@ -200,7 +254,7 @@ $small-gap: 0.5rem;
 .youtube {
   height: 100%;
   flex: 2;
-  // @include r(1024) {
-  //   width: 100%;
-  // }
+  @include mobile {
+    width: 100%;
+  }
 }
