@@ -16,13 +16,13 @@
 .header {
   @include Flexbox($justify: space-between);
   @include Border($tl: 10px, $tr: 10px, $bl: 0, $br: 0);
-  @include Padding(0, 2rem);
+  @include Padding(0, 1rem);
   width: 100%;
   height: 104px;
   background: var(--color-bg-dark);
 
   .identity {
-    @include Flexbox;
+    @include Flexbox($justify: space-between);
     gap: 1em;
 
     @include mobile {
@@ -89,7 +89,7 @@
 
   .speechBubble {
     @include Flexbox($justify: flex-start);
-    @include Padding(1rem, 2rem);
+    @include Padding(1rem, 1rem);
     gap: 1rem;
     background: var(--color-bg-dark);
 
@@ -136,7 +136,7 @@ $padding: 25px;
 
   > div {
     @include Flexbox($justify: space-between);
-    width: 20%;
+    width: 27%;
     position: absolute;
     right: 10%;
     top: 10px;
