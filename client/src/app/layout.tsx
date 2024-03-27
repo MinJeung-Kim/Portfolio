@@ -26,8 +26,10 @@ export default function RootLayout({
     <html lang="en" className={poppins.className}>
       <body>
         <DarkModeProvider>
-          <Header />
-          <main>{children}</main>
+          <main>
+            <Header />
+            <div>{children}</div>
+          </main>
         </DarkModeProvider>
         <div id="portal" />
       </body>

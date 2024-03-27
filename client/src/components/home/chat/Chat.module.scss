@@ -7,7 +7,8 @@
   flex-direction: column;
   width: 100%;
   flex: 2;
-  @include r(1024) {
+
+  @include mobile {
     order: 2;
   }
 }
@@ -19,35 +20,35 @@
   width: 100%;
   height: 104px;
   background: var(--color-bg-dark);
-}
 
-.identity {
-  @include Flexbox;
-  gap: 1em;
+  .identity {
+    @include Flexbox;
+    gap: 1em;
 
-  .nickname {
-    @include Flexbox($items: flex-start);
-    flex-direction: column;
-    gap: 0.15rem;
-    color: var(--color-text-dar);
-    > p {
-      &:nth-child(1) {
-        @include FontStyles(normal, 700, 16px, 19px);
-      }
-      &:nth-child(2) {
-        @include FontStyles(normal, 400, 12px, 14px);
+    .nickname {
+      @include Flexbox($items: flex-start);
+      flex-direction: column;
+      gap: 0.15rem;
+      color: var(--color-text-dar);
+      > p {
+        &:nth-child(1) {
+          @include FontStyles(normal, 700, 16px, 19px);
+        }
+        &:nth-child(2) {
+          @include FontStyles(normal, 400, 12px, 14px);
+        }
       }
     }
   }
-}
 
-.contact {
-  @include Flexbox($justify: space-between);
-  gap: 1rem;
-  > svg {
-    color: $purple;
-    :hover {
-      cursor: pointer;
+  .contact {
+    @include Flexbox($justify: space-between);
+    gap: 1rem;
+    > svg {
+      color: $purple;
+      :hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -59,29 +60,34 @@
   border-top: 0;
   width: 100%;
   height: 70vh;
-}
 
-.speechBubble {
-  @include Flexbox($justify: flex-start);
-  @include Padding(1rem, 3rem);
-  gap: 2.2rem;
-  background: var(--color-bg-dark);
-  > div {
-    .text {
-      @include Flexbox;
-      @include FontStyles(normal, 400, 12px, 20px);
-      width: 362px;
-      height: 57px;
-      background: $purple;
-      border-radius: 0px 15px 15px 15px;
-      padding: 1rem;
-      letter-spacing: 0.14px;
-      color: #ffffff;
-    }
-    > p {
-      @include FontStyles(normal, 400, 10px, 12px);
-      padding-top: 0.58rem;
-      color: var(--color-text-dark);
+  .speechBubble {
+    @include Flexbox($justify: flex-start);
+    @include Padding(1rem, 3rem);
+    gap: 2.2rem;
+    background: var(--color-bg-dark);
+    > div {
+      .text {
+        @include Flexbox;
+        @include FontStyles(normal, 400, 12px, 20px);
+        width: 100%;
+        height: 57px;
+        background: $purple;
+        border-radius: 0px 15px 15px 15px;
+        padding: 1rem;
+        letter-spacing: 0.14px;
+        color: #ffffff;
+
+        @include mobile {
+          overflow: auto;
+          padding: 1rem 0.3rem;
+        }
+      }
+      > p {
+        @include FontStyles(normal, 400, 10px, 12px);
+        padding-top: 0.58rem;
+        color: var(--color-text-dark);
+      }
     }
   }
 }
@@ -89,9 +95,11 @@
 $padding: 25px;
 
 .input {
-  @include Padding(1rem, 3rem);
-  width: 100%;
+  // @include Padding(1rem, 3rem);
+  width: 90%;
   position: relative;
+  margin: 0 auto 1rem auto;
+
   > input {
     width: 100%;
     height: 2.5rem;
@@ -99,13 +107,15 @@ $padding: 25px;
     border-radius: 10px;
     padding-right: 25%;
   }
+
   > div {
     @include Flexbox($justify: space-between);
-    width: 15%;
+    width: 20%;
     position: absolute;
     right: 10%;
-    top: 25px;
+    top: 10px;
     gap: 0.5rem;
+
     > svg {
       color: $purple;
       cursor: pointer;

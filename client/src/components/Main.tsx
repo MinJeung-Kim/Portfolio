@@ -6,7 +6,7 @@ export default function Main() {
   return (
     <section className={styles.main}>
       <Chat />
-      <Hero />
+      {/*  <Hero /> */}
     </section>
   );
 }

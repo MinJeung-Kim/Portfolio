@@ -2,60 +2,58 @@
 @import "@/styles/scss/globals";
 @import "@/styles/scss/responsive";
 
+// Header
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2em;
-  padding-bottom: 2rem;
-  @include r(1024) {
-    padding-top: 2rem;
-  }
-}
+  padding: 2rem;
+  width: 100%;
 
-.logo {
-  color: $turquoise;
-  font-weight: 700;
-  font-size: 1em;
-  line-height: 23px;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.menu_icon {
-  display: none;
-
-  @include r(1024) {
-    display: flex;
-  }
-}
-
-.menu {
-  @include Flexbox($justify: space-between);
-  width: 70%;
-
-  @include r(1024) {
-    display: none;
-  }
-}
-
-.search {
-  width: 3em;
-  height: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $coralRed;
-  > svg {
-    width: 1em;
-    height: 1em;
-    color: $white;
-  }
-  &:hover {
+  .logo {
+    color: $turquoise;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 23px;
+    letter-spacing: 1px;
     cursor: pointer;
   }
+
+  .menu_icon {
+    display: none;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  .menu {
+    @include Flexbox($justify: space-between);
+    width: 70%;
+
+    @include mobile {
+      display: none;
+    }
+    .search {
+      width: 3em;
+      height: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $coralRed;
+      > svg {
+        width: 1em;
+        height: 1em;
+        color: $white;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
+// HeaderNavigation
 .nav {
   display: flex;
   gap: 2em;

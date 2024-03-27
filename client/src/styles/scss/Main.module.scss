@@ -5,7 +5,8 @@
 .main {
   @include Flexbox;
   gap: 4rem;
-  @include r(1024) {
+
+  @include mobile {
     flex-direction: column;
   }
 }

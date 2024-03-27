@@ -8,6 +8,7 @@ export default function HeaderNavigation() {
     { href: "/career", title: "career" },
     { href: "/community", title: "community" },
   ];
+
   return (
     <nav className={styles.nav}>
       {MENUS.map(({ href, title }) => (

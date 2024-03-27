@@ -48,18 +48,18 @@ $small-gap: 0.5rem;
     width: 100%;
     height: 100%;
 
-    @include r(1024) {
-      flex-direction: column;
-    }
+    // @include r(1024) {
+    //   flex-direction: column;
+    // }
 
     .career_detail {
       @include flex-container(row, flex-start, flex-start, 2rem);
       width: 100%;
       height: 100%;
       flex: 1;
-      @include r(1024) {
-        order: 2;
-      }
+      // @include r(1024) {
+      //   order: 2;
+      // }
     }
 
     .title {
@@ -90,10 +90,10 @@ $small-gap: 0.5rem;
     padding-bottom: 1rem;
     object-fit: cover;
     height: auto;
-    @include r(1024) {
-      width: 100%;
-      height: auto;
-    }
+    // @include r(1024) {
+    //   width: 100%;
+    //   height: auto;
+    // }
   }
 
   .title_wrap {
@@ -200,7 +200,7 @@ $small-gap: 0.5rem;
 .youtube {
   height: 100%;
   flex: 2;
-  @include r(1024) {
-    width: 100%;
-  }
+  // @include r(1024) {
+  //   width: 100%;
+  // }
 }
