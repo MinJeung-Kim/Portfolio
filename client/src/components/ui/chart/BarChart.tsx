@@ -1,12 +1,11 @@
 "use client";
 import * as d3 from "d3";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bars } from "./Bars";
 import Tooltip from "./Tooltip";
 import AxisBottom from "./AxisBottom";
 import { DataItem, TooltipProps } from "@/model/chart";
 import styles from "./BarChart.module.scss";
-import { AxisLeft } from "./AxisLeft";
 
 interface Props {
   data: DataItem[];
@@ -14,9 +13,23 @@ interface Props {
 
 // 막대 차트 컴포넌트 정의
 export default function BarChart({ data }: Props) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [tooltip, setTooltip] = useState<TooltipProps | null>(null);
-  const width = 650; // 너비
+
+  const width = Math.max(windowWidth / 2, 300); // 너비
   const height = 200; // 높이
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [width]);
 
   const margin = { top: 10, right: 0, bottom: 20, left: 30 };
   const graphWidth = width - margin.left - margin.right; // 그래프 너비
@@ -49,7 +62,6 @@ export default function BarChart({ data }: Props) {
             // +10 : 패딩추가
             transform={`translate(0, ${graphHeight + 10})`}
           />
-          {/* <AxisLeft scale={scaleY} /> */}
           <Bars
             data={data}
             height={graphHeight}
