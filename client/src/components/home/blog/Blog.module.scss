@@ -4,6 +4,7 @@
 
 .blog {
   width: 100%;
+
   .title {
     @include Title;
   }
@@ -12,6 +13,7 @@
 .blog_card {
   .card {
     overflow: hidden;
+
     > img {
       cursor: pointer;
       object-fit: cover;
@@ -28,10 +30,12 @@
 
   .title {
     @include Flexbox($justify: flex-start);
+
     > h2 {
       @include FontStyles(normal, 500, 13px, 12px);
       color: #f5556e;
     }
+
     > p {
       @include FontStyles(normal, 400, 13px, 12px);
       display: flex;
@@ -48,13 +52,19 @@
       }
     }
   }
+
   .description {
     @include FontStyles(normal, 400, 16px, 30px);
     word-break: break-word;
     text-align: justify;
+
     @include mobile {
       font-size: 0.85rem;
       line-height: 25px;
+    }
+    @include tabletToMobile {
+      font-size: 0.85rem;
+      line-height: 24px;
     }
   }
 }

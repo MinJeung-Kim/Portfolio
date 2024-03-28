@@ -53,7 +53,7 @@ export default function BarChart({ data }: Props) {
   return (
     <>
       <svg
-        width={graphWidth + margin.left + margin.right}
+        width={width + margin.left + margin.right}
         height={graphHeight + margin.top + margin.bottom}
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>

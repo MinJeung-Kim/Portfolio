@@ -11,6 +11,9 @@
   @include mobile {
     order: 2;
   }
+  @include tabletToMobile {
+    order: 2;
+  }
 }
 
 .header {
@@ -45,6 +48,7 @@
       flex-direction: column;
       gap: 0.15rem;
       color: var(--color-text-dar);
+
       > p {
         &:nth-child(1) {
           @include FontStyles(normal, 700, 16px, 19px);
@@ -145,6 +149,11 @@ $padding: 25px;
     right: 10%;
     top: 10px;
     gap: 0.5rem;
+
+    @include tabletToMobile {
+      width: 19%;
+      right: 15px;
+    }
 
     > svg {
       color: $purple;

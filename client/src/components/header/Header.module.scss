@@ -25,6 +25,9 @@
     @include mobile {
       display: flex;
     }
+    @include tabletToMobile {
+      display: flex;
+    }
   }
 
   .menu {
@@ -34,6 +37,10 @@
     @include mobile {
       display: none;
     }
+    @include tabletToMobile {
+      display: none;
+    }
+
     .search {
       width: 3em;
       height: 3em;
