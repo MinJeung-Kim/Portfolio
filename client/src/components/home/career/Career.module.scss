@@ -41,7 +41,7 @@ $small-gap: 0.5rem;
 // Career
 .career {
   width: 100%;
-  height: 90vh;
+  // height: 90vh;
 
   .detail_card {
     @include flex-container(row, flex-start, flex-start, 2rem);
@@ -187,44 +187,47 @@ $small-gap: 0.5rem;
       }
     }
   }
-}
 
-.content {
-  @include flex-container;
-  height: 30%;
+  .content {
+    @include flex-container;
+    height: 30%;
 
-  .array,
-  .colum {
-    @include flex-container($gap: 0);
-    word-break: keep-all;
-    padding-bottom: 0.8rem;
-    @include mobile {
-      font-size: 0.5rem;
+    > div {
+      height: 150px;
     }
-
-    .header {
-      display: block;
-      white-space: nowrap;
+    .array,
+    .colum {
+      @include flex-container($gap: 0);
+      word-break: keep-all;
+      padding-bottom: 0.8rem;
       @include mobile {
-        font-size: 0.8rem;
+        font-size: 0.5rem;
+      }
+
+      .header {
+        display: block;
+        white-space: nowrap;
+        @include mobile {
+          font-size: 0.8rem;
+        }
+      }
+
+      > li {
+        @include text-styles;
+        padding-left: 0.5rem;
+      }
+
+      .item {
+        padding-left: 1rem;
+        @include mobile {
+          font-size: 0.8rem;
+        }
       }
     }
 
-    > li {
-      @include text-styles;
-      padding-left: 0.5rem;
+    .colum {
+      @include flex-container(row, $gap: 0);
     }
-
-    .item {
-      padding-left: 1rem;
-      @include mobile {
-        font-size: 0.8rem;
-      }
-    }
-  }
-
-  .colum {
-    @include flex-container(row, $gap: 0);
   }
 }
 

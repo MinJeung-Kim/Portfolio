@@ -21,6 +21,10 @@
   height: 104px;
   background: var(--color-bg-dark);
 
+  @include mobile {
+    height: 80px;
+  }
+
   .identity {
     @include Flexbox($justify: space-between);
     gap: 1em;
